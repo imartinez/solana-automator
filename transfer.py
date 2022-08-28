@@ -113,7 +113,7 @@ for record in records:
 
     # call the spl-token transfer command to send the specified token
     try:
-        output = get_proc_output('spl-token transfer --fund-recipient "' + token + '" "' + amount + '" "' + recipient + '"')
+        output = get_proc_output('spl-token transfer --fund-recipient --allow-unfunded-recipient "' + token + '" "' + amount + '" "' + recipient + '"')
     except Exception as e:
         logging.error('unable to perform transfer (' + str(e) + ')')
         print(recipient, file=log_file)
